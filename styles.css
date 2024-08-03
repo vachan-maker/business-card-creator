@@ -1,0 +1,106 @@
+@import url(https://fonts.bunny.net/css?family=poppins:400,600);
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+h1, p {
+    text-align: center;
+}
+body {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'poppins';
+    margin:1rem;
+}
+flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+    margin-top: 20px;
+}
+input {
+    padding:7px;
+}
+button {
+    padding: 7px;
+    background-color: #2f3b69;
+    color: white;
+    border: none;
+    margin-top: 10px;
+}
+.main-container {
+    background-color: whitesmoke;
+    padding: 1rem;
+}
+.card-container {
+    margin:0 auto;
+    min-width: 80%;
+    padding:1rem;
+    color: white;
+}
+.border {
+    border: 5px solid #e3dddc;
+}
+.generated-card {
+    display: flex;
+    flex: 1;
+}
+.symbol-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+#symbol {
+    background-color: #2f3b69;
+    padding: 30px 40px;
+}
+.info-container {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    background-color: #2f3b69;
+    text-align: center;
+    padding: 1rem;
+    justify-content: space-around;
+}
+.users-name {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+.users-title {
+    text-transform: uppercase;
+    font-size: medium;
+    letter-spacing: 4px;
+    font-size: small;
+}
+.header {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+ul {
+    list-style: none;
+    text-align: left;
+    font-size: smaller;
+}
+.icon {
+    margin-right: 5px;
+}
+.front-view {
+    background-color: #2f3b69;
+    margin-top:20px;
+    min-height: 250px;
+}

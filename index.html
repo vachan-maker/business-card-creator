@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container flex-column">
+    <h1>Business Card Creator</h1>
+    <p>Create your own business card! You can even download the card as pdf!</p>
+    <div class="container">
+    <form>
+        <label for="name">Enter your name: </label>
+        <input type = "text" id="name" oninput="updateCard()"/>
+        <label for = "title">What do you do?</label>
+        <input type = "text" placeholder = "Eg. Web Developer" id = "title" oninput="updateCard()"/>
+        <label for = "number">Enter your Mobile Number</label>
+        <input type = "number" id="number" oninput="updateCard()"/>
+        <label for="email">Your Email id</label>
+        <input type="email" id="email" oninput="updateCard()"/>
+        <button type="button" onclick="generatePdf()">Download PDF!</button>
+    </form>
+    </div>
+    <div class="card-container" id="final-card">
+    <div class="generated-card border">
+        <div class="symbol-container">
+        <h1 id="symbol"></h1>
+        </div>
+        <div class="info-container">
+        <div class="header">
+        <h2 class="users-name" id="PersonName"></h2>
+        <p class="users-title" id="PersonTitle"></p>
+        </div>
+        <div class="details">
+            <ul>
+                <li><span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span><span id="PersonPhone"></span></li>
+                <li><span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span><span id="PersonEmail"></span></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="front-view flex-row border">
+        <h1 id="PersonTitleFront" class="users-name"></h1>
+    </div>
+    </div>
+    </div>
+    <script>
+        function updateCard() {
+            let name = document.getElementById("name").value;
+            document.getElementById("PersonName").innerText = name;
+            document.getElementById("PersonTitle").innerText = document.getElementById("title").value;
+            document.getElementById("PersonPhone").innerText = document.getElementById("number").value;
+            document.getElementById("PersonEmail").innerText = document.getElementById("email").value;
+            document.getElementById("PersonTitleFront").innerText = document.getElementById("name").value;
+            document.getElementById("symbol").innerText = name.charAt(0);
+        }
+        function generatePdf() {
+            var element = document.getElementById('final-card');
+            html2pdf(element);            
+        }
+    </script>
+</body>
+</html>
